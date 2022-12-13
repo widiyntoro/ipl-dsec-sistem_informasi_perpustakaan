@@ -83,6 +83,8 @@ CREATE TABLE `transaksi` (
 --
 -- Indexes for dumped tables
 --
+ALTER TABLE `buku`
+  DROP INDEX_Judul_Buku;
 
 --
 -- Indeks untuk tabel `anggota`
@@ -114,7 +116,8 @@ ALTER TABLE `transaksi`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
-
+ALTER TABLE `buku`
+  ADD CONSTRAINT `buku_ibfk_1` FOREIGN KEY (`ID_buku`) REFERENCES `transaksi` (`ID_buku`);
 --
 -- Ketidakleluasaan untuk tabel `anggota`
 --
